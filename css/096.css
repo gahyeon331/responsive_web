@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+*{margin: 0; padding: 0;}
+li {list-style: none;}
+a {
+    text-decoration: none;
+    display: block;
+    color: #333;
+}
+
+.fas, .far, .mobile {display: none;}
+
+header {
+    height: 80px;
+    line-height: 80px;
+    background-color: darkseagreen;
+    position: relative;
+}
+.menu_bg {
+    width: 100%;
+    height: 330px;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background-color: lemonchiffon;
+    z-index: 1;
+    display: none;
+}
+.header {
+    max-width: 1440px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    text-align: center;
+    /* background-color: darkslateblue; */
+}
+.header::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.header h1 {float: left;}
+.pc {
+    /* background-color: darkturquoise; */
+    display: inline-block;
+}
+.pc > ul > li {
+    display: inline-block;
+    vertical-align: top;
+    width: 150px;
+    text-align: center;
+    position: relative;
+}
+.pc .depth02 {
+    position: absolute;
+    top: 0;
+    top: 80px;
+    width: 100%;
+    background-color: lemonchiffon;
+    z-index: 9;
+    display: none;
+}
+
+.main_visual {
+    height: 500px;
+    background-color: lightgrey;
+    position: relative;
+}
+.main_visual > dl {
+    /* background-color: lightpink; */
+    max-width: 1440px;
+    width: calc(100% - 40px);
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%)   
+}
+
+@media screen and (max-width: 1024px) {
+    .pc {display: none;}
+    .mobile {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        height: 100%;
+        background-color: lightpink;
+        z-index: 9;
+        transition: .5s;
+    } 
+    .mobile .depth01 a.on {background-color: rgb(255, 125, 144);}
+    .mobile .depth02 {
+        background-color: lemonchiffon;
+        display: none;
+    }  
+    .mobile .depth02 li:hover {background-color: rgb(255, 245, 150);}                               
+    .fas, .far {
+        display: block;
+        position: absolute;
+        right: 30px;
+        top: 30px;
+        font-size: 20px;
+        cursor: pointer;
+    }   
+    .far {
+        display: none;
+    }  
+
+}
